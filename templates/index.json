@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+
+ {
+  "sections": {
+    "slideshow_dKy8EW": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_CwpVEG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/istockphoto-919666108-612x612.jpg",
+            "moblie": "shopify://shop_images/96BD0B7BECC5A7246FF0C3B911DFD158.jpg",
+            "heading": "Breakfast Specialties",
+            "heading_size": "h0",
+            "subheading": "LOMAN INSPUR DOLER SIT AMIT PRO CRETERS HENDLING EU MODALS",
+            "button_label": "VIEW FEATURES",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": false,
+            "text_alignment": "center",
+            "image_overlay_opacity": 50,
+            "color_scheme": "inverse",
+            "text_alignment_mobile": "right"
+          }
+        },
+        "slide_adbKgh": {
+          "type": "slide",
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_rmbRy7": {
+          "type": "slide",
+          "settings": {
+            "moblie": "shopify://shop_images/vegi_tebal.png",
+            "heading": "Image slide",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "Button label",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_CwpVEG",
+        "slide_adbKgh",
+        "slide_rmbRy7"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "<strong>Featured products</strong>",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": true,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": true,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 44,
+        "padding_bottom": 36
+      }
+    },
+    "shop_the_look_B9TPUj": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product_slide_AfQkyj": {
+          "type": "product_slide",
+          "settings": {
+            "product": "100-250ml-wireless-electric-garlic-masher-vegetable-fruit-cutter-kitchen-gadgets-for-home-usb-portable-food-crusher-meat-grinder-109367230783-knruv"
+          }
+        },
+        "product_slide_tcMUjW": {
+          "type": "product_slide",
+          "settings": {
+            "product": "egg-cooker-auto-shut-off-fast-heated-steaming-multifunction-gadgets-egg-steamer-for-breakfast-dining-kitchen-tools-cooking-home-109367230783-gwodz"
+          }
+        }
+      },
+      "block_order": [
+        "product_slide_AfQkyj",
+        "product_slide_tcMUjW"
+      ],
+      "name": "Shop the Look Example",
+      "settings": {
+        "heading": "Get The Look",
+        "style_badge": "STYLE 1",
+        "look_image": "shopify://shop_images/S47929081873b4ad68906f278bef5ce8eb.webp"
+      }
+    },
+    "gift_collage_chJRjr": {
+      "type": "gift-collage",
+      "name": "Gift collage",
+      "settings": {
+        "left_badge": "Mattis laoreet sapien",
+        "left_title": "Porta consectetur imperdiet frigilla",
+        "left_description": "Curate a small hero with elevated imagery and a simple call to action.",
+        "left_button_label": "Read more",
+        "left_button_link": "",
+        "left_image": "shopify://shop_images/banner-1-opt.jpg",
+        "heading_size": "h1",
+        "tile1_badge": "Semper",
+        "tile1_title": "Feugiat scelerisque imperdiet",
+        "tile1_button_label": "Read more",
+        "tile1_button_link": "",
+        "tile1_image": "shopify://shop_images/S1f873362d1104f2ba47cfb7f3ea12638w.webp",
+        "tile2_badge": "Semper",
+        "tile2_title": "Adipiscing sodales",
+        "tile2_button_label": "Read more",
+        "tile2_button_link": "",
+        "tile2_image": "shopify://shop_images/H67293d4280414f08b58fabe8831c46dbK.webp",
+        "tile3_badge": "Semper",
+        "tile3_title": "Curabitur blandit",
+        "tile3_button_label": "Read more",
+        "tile3_button_link": "",
+        "tile3_image": "shopify://shop_images/H67293d4280414f08b58fabe8831c46dbK.webp",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "slideshow_dKy8EW",
+    "featured_collection",
+    "shop_the_look_B9TPUj",
+    "gift_collage_chJRjr"
+  ]
+}

@@ -1,0 +1,347 @@
+{{ 'gift-collage.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="color-{{ section.settings.color_scheme }} gradient">
+  <div class="page-width section-{{ section.id }}-padding gift-collage">
+    <div class="gift-collage__left">
+      <div>
+        {%- if section.settings.left_badge != blank -%}
+          <p class="gift-collage__badge">{{ section.settings.left_badge }}</p>
+        {%- endif -%}
+        {%- if section.settings.left_title != blank -%}
+          <h2 class="gift-collage__title {{ section.settings.heading_size }}">{{ section.settings.left_title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.left_description != blank -%}
+          <p class="gift-collage__desc">{{ section.settings.left_description }}</p>
+        {%- endif -%}
+        {%- if section.settings.left_button_label != blank -%}
+          <a
+            class="gift-collage__link"
+            {% if section.settings.left_button_link == blank %}
+              role="link" aria-disabled="true"
+            {% else %}
+              href="{{ section.settings.left_button_link }}"
+            {% endif %}
+          >
+            {{ section.settings.left_button_label | escape }}
+          </a>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.left_image != blank -%}
+        <div class="gift-collage__left-media">
+          {{
+            section.settings.left_image
+            | image_url: width: 2000
+            | image_tag: loading: 'lazy', widths: '360, 540, 720, 940, 1200, 1600, 2000'
+          }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="gift-collage__right">
+      <div class="gift-collage__tile gift-collage__tile--wide">
+        <div class="gift-collage__media">
+          {%- if section.settings.tile1_image != blank -%}
+            {{
+              section.settings.tile1_image
+              | image_url: width: 1800
+              | image_tag: loading: 'lazy', widths: '360, 540, 720, 960, 1200, 1800'
+            }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          {%- endif -%}
+        </div>
+        <div class="gift-collage__overlay">
+          {%- if section.settings.tile1_badge != blank -%}
+            <p class="gift-collage__badge">{{ section.settings.tile1_badge }}</p>
+          {%- endif -%}
+          {%- if section.settings.tile1_title != blank -%}
+            <p class="gift-collage__tile-title h2">{{ section.settings.tile1_title }}</p>
+          {%- endif -%}
+          {%- if section.settings.tile1_button_label != blank -%}
+            <a
+              class="gift-collage__link"
+              {% if section.settings.tile1_button_link == blank %}
+                role="link" aria-disabled="true"
+              {% else %}
+                href="{{ section.settings.tile1_button_link }}"
+              {% endif %}
+            >
+              {{ section.settings.tile1_button_label | escape }}
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <div class="gift-collage__tile-grid">
+        <div class="gift-collage__tile gift-collage__tile--compact">
+          <div class="gift-collage__media">
+            {%- if section.settings.tile2_image != blank -%}
+              {{
+                section.settings.tile2_image
+                | image_url: width: 1200
+                | image_tag: loading: 'lazy', widths: '360, 540, 720, 960, 1200'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="gift-collage__overlay">
+            {%- if section.settings.tile2_badge != blank -%}
+              <p class="gift-collage__badge">{{ section.settings.tile2_badge }}</p>
+            {%- endif -%}
+            {%- if section.settings.tile2_title != blank -%}
+              <p class="gift-collage__tile-title h3">{{ section.settings.tile2_title }}</p>
+            {%- endif -%}
+            {%- if section.settings.tile2_button_label != blank -%}
+              <a
+                class="gift-collage__link"
+                {% if section.settings.tile2_button_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.tile2_button_link }}"
+                {% endif %}
+              >
+                {{ section.settings.tile2_button_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="gift-collage__tile gift-collage__tile--compact">
+          <div class="gift-collage__media">
+            {%- if section.settings.tile3_image != blank -%}
+              {{
+                section.settings.tile3_image
+                | image_url: width: 1200
+                | image_tag: loading: 'lazy', widths: '360, 540, 720, 960, 1200'
+              }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            {%- endif -%}
+          </div>
+          <div class="gift-collage__overlay">
+            {%- if section.settings.tile3_badge != blank -%}
+              <p class="gift-collage__badge">{{ section.settings.tile3_badge }}</p>
+            {%- endif -%}
+            {%- if section.settings.tile3_title != blank -%}
+              <p class="gift-collage__tile-title h3">{{ section.settings.tile3_title }}</p>
+            {%- endif -%}
+            {%- if section.settings.tile3_button_label != blank -%}
+              <a
+                class="gift-collage__link"
+                {% if section.settings.tile3_button_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.tile3_button_link }}"
+                {% endif %}
+              >
+                {{ section.settings.tile3_button_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Gift collage",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "left_badge",
+      "label": "Left badge text",
+      "default": "Mattis laoreet sapien"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "left_title",
+      "label": "Left heading",
+      "default": "Porta consectetur imperdiet frigilla"
+    },
+    {
+      "type": "text",
+      "id": "left_description",
+      "label": "Left description",
+      "default": "Curate a small hero with elevated imagery and a simple call to action."
+    },
+    {
+      "type": "text",
+      "id": "left_button_label",
+      "label": "Left button label",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "left_button_link",
+      "label": "Left button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_image",
+      "label": "Left image"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "Heading size",
+      "default": "h1",
+      "options": [
+        { "value": "h2", "label": "H2" },
+        { "value": "h1", "label": "H1" },
+        { "value": "h0", "label": "H0" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Top right tile"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tile1_badge",
+      "label": "Tile badge",
+      "default": "Semper"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tile1_title",
+      "label": "Tile title",
+      "default": "Feugiat scelerisque imperdiet"
+    },
+    {
+      "type": "text",
+      "id": "tile1_button_label",
+      "label": "Tile button label",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "tile1_button_link",
+      "label": "Tile button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "tile1_image",
+      "label": "Tile image"
+    },
+    {
+      "type": "header",
+      "content": "Bottom left tile"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tile2_badge",
+      "label": "Tile badge",
+      "default": "Semper"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tile2_title",
+      "label": "Tile title",
+      "default": "Adipiscing sodales"
+    },
+    {
+      "type": "text",
+      "id": "tile2_button_label",
+      "label": "Tile button label",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "tile2_button_link",
+      "label": "Tile button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "tile2_image",
+      "label": "Tile image"
+    },
+    {
+      "type": "header",
+      "content": "Bottom right tile"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tile3_badge",
+      "label": "Tile badge",
+      "default": "Semper"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "tile3_title",
+      "label": "Tile title",
+      "default": "Curabitur blandit"
+    },
+    {
+      "type": "text",
+      "id": "tile3_button_label",
+      "label": "Tile button label",
+      "default": "Read more"
+    },
+    {
+      "type": "url",
+      "id": "tile3_button_link",
+      "label": "Tile button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "tile3_image",
+      "label": "Tile image"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "background-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gift collage"
+    }
+  ]
+}
+{% endschema %}
+

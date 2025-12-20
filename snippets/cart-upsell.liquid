@@ -1,0 +1,24 @@
+
+<h3>Recommendation</h3>
+<div class="cart-recommendation">
+  {% for item in cart.items %}
+    {% assign collection = item.product.metafields.custom.cart_upsell.value %}
+    {% for product in collection %}
+      {% render 'card-product',
+        card_product: product,
+        media_aspect_ratio: section.settings.image_ratio,
+        show_secondary_image: section.settings.show_secondary_image,
+        show_vendor: section.settings.show_vendor,
+        show_rating: section.settings.show_rating,
+        lazy_load: lazy_load
+      %}
+      
+    {% endfor %}
+  {% endfor %}
+</div>
+<style>
+  .cart-recommendation {
+        display: flex;
+        gap: 10px;
+  }
+  </style>
