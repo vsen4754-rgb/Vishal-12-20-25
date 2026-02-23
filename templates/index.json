@@ -7,9 +7,29 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
-
- {
+{
   "sections": {
+    "17718461345ae9bbc9": {
+      "type": "apps",
+      "blocks": {
+        "faslet_size_me_up_app_block_F9xbQ7": {
+          "type": "shopify://apps/faslet-size-me-up/blocks/app-block/5229b985-f073-4848-b04b-7ac4ceeaeb5f",
+          "settings": {
+            "settingsSource": "shopify",
+            "colorPrimary": "#50aa8d",
+            "fontColor": "#ffffff",
+            "fontSize": 14,
+            "roundedCorners": true
+          }
+        }
+      },
+      "block_order": [
+        "faslet_size_me_up_app_block_F9xbQ7"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
     "slideshow_dKy8EW": {
       "type": "slideshow",
       "blocks": {
@@ -172,6 +192,7 @@
     }
   },
   "order": [
+    "17718461345ae9bbc9",
     "slideshow_dKy8EW",
     "featured_collection",
     "shop_the_look_B9TPUj",
