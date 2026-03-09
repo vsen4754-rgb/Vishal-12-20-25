@@ -96,20 +96,21 @@
             </small>
           {%- endif -%}
         </div>
-        <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
+ <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
   <div class="xo-contact__custom-field">
     <p class="xo-field-label">Which Favors Are You Interested In?</p>
 
     {% assign favor_options = section.settings.favor_options | split: ',' %}
 
-    <div class="xo-checkbox-group">
+    <div class="xo-checkbox-group" id="favorCheckboxGroup">
       {% for option in favor_options %}
         <label class="xo-checkbox-item">
           <input
             type="checkbox"
-            name="contact[favors]"
+            name="contact[favors][]"
             value="{{ option | strip }}"
-            {% if forloop.first %}checked{% endif %}
+            class="favor-checkbox"
+            {% if forloop.first %}checked data-default="true"{% endif %}
           >
           <span>{{ option | strip }}</span>
         </label>
