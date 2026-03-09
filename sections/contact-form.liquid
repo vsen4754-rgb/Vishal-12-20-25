@@ -106,11 +106,10 @@
       {% for option in favor_options %}
         <label class="xo-checkbox-item">
           <input
-            type="checkbox"
-            name="contact[favors][]"
+            type="radio"
+            name="contact[favors]"
             value="{{ option | strip }}"
-            class="favor-checkbox"
-            {% if forloop.first %}checked data-default="true"{% endif %}
+            {% if forloop.first %}checked{% endif %}
           >
           <span>{{ option | strip }}</span>
         </label>
@@ -118,40 +117,12 @@
     </div>
 
   </div>
-</xo-animate><script>
-document.addEventListener("DOMContentLoaded", function(){
-
-const checkboxes = document.querySelectorAll(".favor-checkbox");
-const defaultBox = document.querySelector('[data-default="true"]');
-
-checkboxes.forEach(box => {
-
-  box.addEventListener("change", function(){
-
-    if(this.dataset.default){
-      
-      if(this.checked){
-        checkboxes.forEach(cb=>{
-          if(cb !== this){
-            cb.checked = false;
-          }
-        });
-      }
-
-    }else{
-
-      if(this.checked){
-        defaultBox.checked = false;
-      }
-
-    }
-
-  });
-
-});
-
-});
-</script>
+</xo-animate>
+<style>
+  .xo-checkbox-item input[type="radio"]{
+appearance:checkbox;
+}
+</style>
       </div>
       <div class="field">
         <input
