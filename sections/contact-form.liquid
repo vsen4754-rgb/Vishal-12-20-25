@@ -133,6 +133,29 @@
         >
         <label class="field__label" for="ContactForm-phone">{{ 'templates.contact.form.phone' | t }}</label>
       </div>
+        <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
+            <div class="xo-contact__custom-field">
+              <p class="xo-field-label">Which Favors Are You Interested In?</p>
+
+              {% assign favor_options = section.settings.favor_options | split: ',' %}
+
+              <div class="xo-checkbox-group">
+                {% for option in favor_options %}
+                  <label class="xo-checkbox-item">
+                    <input
+                      type="checkbox"
+                      name="contact[favors][]"
+                      value="{{ option | strip }}"
+                      {% if forloop.first %}
+                        checked
+                      {% endif %}
+                    >
+                    <span>{{ option | strip }}</span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+          </xo-animate>
       <div class="field">
         <textarea
           rows="10"
