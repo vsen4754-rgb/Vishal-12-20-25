@@ -124,6 +124,29 @@
           {{- 'templates.contact.form.comment' | t -}}
         </label>
       </div>
+      <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
+            <div class="xo-contact__custom-field">
+              <p class="xo-field-label">Which Favors Are You Interested In?</p>
+
+              {% assign favor_options = section.settings.favor_options | split: ',' %}
+
+              <div class="xo-checkbox-group">
+                {% for option in favor_options %}
+                  <label class="xo-checkbox-item">
+                    <input
+                      type="checkbox"
+                      name="contact[favors][]"
+                      value="{{ option | strip }}"
+                      {% if forloop.first %}
+                        checked
+                      {% endif %}
+                    >
+                    <span>{{ option | strip }}</span>
+                  </label>
+                {% endfor %}
+              </div>
+            </div>
+          </xo-animate>
       <div class="contact__button">
         <button type="submit" class="button">
           {{ 'templates.contact.form.send' | t }}
@@ -147,6 +170,12 @@
       "id": "heading",
       "default": "Contact form",
       "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "favor_options",
+      "label": "Favors Options (comma separated)",
+      "default": "Signature Raw Honey Jars, Handcrafted Honey Soaps, Gourmet Coffee Beans, Artisanal Tea Blends, Curated Gift Boxes"
     },
     {
       "type": "select",
