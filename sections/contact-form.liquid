@@ -96,13 +96,13 @@
             </small>
           {%- endif -%}
         </div>
- <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
+<xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
   <div class="xo-contact__custom-field">
     <p class="xo-field-label">Which Favors Are You Interested In?</p>
 
     {% assign favor_options = section.settings.favor_options | split: ',' %}
 
-    <div class="xo-checkbox-group" id="favorCheckboxGroup">
+    <div class="xo-checkbox-group">
       {% for option in favor_options %}
         <label class="xo-checkbox-item">
           <input
@@ -118,21 +118,36 @@
     </div>
 
   </div>
-</xo-animate>
-<script>
+</xo-animate><script>
 document.addEventListener("DOMContentLoaded", function(){
 
 const checkboxes = document.querySelectorAll(".favor-checkbox");
 const defaultBox = document.querySelector('[data-default="true"]');
 
 checkboxes.forEach(box => {
+
   box.addEventListener("change", function(){
 
-    if(!this.dataset.default){
-      defaultBox.checked = false;
+    if(this.dataset.default){
+      
+      if(this.checked){
+        checkboxes.forEach(cb=>{
+          if(cb !== this){
+            cb.checked = false;
+          }
+        });
+      }
+
+    }else{
+
+      if(this.checked){
+        defaultBox.checked = false;
+      }
+
     }
 
   });
+
 });
 
 });
