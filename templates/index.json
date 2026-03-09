@@ -189,6 +189,17 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "contact_form_kPpgCh": {
+      "type": "contact-form",
+      "name": "t:sections.contact-form.presets.name",
+      "settings": {
+        "heading": "Contact form",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -196,6 +207,7 @@
     "slideshow_dKy8EW",
     "featured_collection",
     "shop_the_look_B9TPUj",
-    "gift_collage_chJRjr"
+    "gift_collage_chJRjr",
+    "contact_form_kPpgCh"
   ]
 }
