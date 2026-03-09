@@ -215,13 +215,13 @@
               </div>
             </div>
           </xo-animate>
-           <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+          <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
               <div class="xo-contact__message">
                 <div class="xo-contact__message-input">
                   {% assign message_id = 'message--' | append: section.id %}
-                  {% assign messageLabel = 'Delivery Address' %}
-                  {% render 'field-textarea',
-                    name: 'contact[message]',
+                  {% assign messageLabel = 'Delivery Address *' %}
+                  {% render 'field-input',
+                    name: 'contact[Delivery Address]',
                     value: form.body,
                     label: messageLabel,
                     required: true,
