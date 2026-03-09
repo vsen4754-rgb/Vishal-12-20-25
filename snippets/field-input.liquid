@@ -1,0 +1,53 @@
+{% comment %}
+  Renders a input
+
+  Accepts:
+  - type: {String} Type of the input
+  - name: {String} Name of the input
+  - value: {String} Value of the input
+  - label: {String} Label of the input (optional)
+  - autocomplete: {String} Autocomplete of the input (optional)
+  - autocapitalize: {String} Autocapitalize of the input (optional)
+  - attr: {String} Attributes of the input. Default: '' (optional)
+
+  Usage:
+  {% render 'field-input',
+    type: 'text'
+    name: 'input',
+    value: 'input',
+    label: 'Input',
+    size: '1.6rem'
+  %}
+{% endcomment %}
+
+<label
+  class='xo-field-input{% if settings.corner_radius == 'radius' %} xo-field-input--rounded{% endif %}'
+  for='{{ id }}'
+>
+  <input
+    class='xo-field-input__input'
+    type='{{ type | default: 'text' }}'
+    name='{{ name }}'
+    value='{{ value }}'
+    id='{{ id }}'
+    {% if placeholder %}
+      placeholder='{{ placeholder }}'
+    {%- else -%}
+      placeholder=''
+    {% endif %}
+    {% if autocomplete %}
+      autocomplete='{{ autocomplete -}}'
+    {% endif %}
+    {% if autocapitalize %}
+      autocapitalize='{{ autocapitalize -}}'
+    {% endif %}
+    {% if attr %}
+      {{ attr -}}
+    {% endif %}
+    aria-label='{{ aria-label }}'
+    {% if required %}
+      required
+    {% endif %}
+  >
+  <span class='xo-field-input__placeholder'>{{ label | default: 'input' }}</span>
+</label>
