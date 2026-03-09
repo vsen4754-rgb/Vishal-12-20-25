@@ -96,7 +96,40 @@
             </small>
           {%- endif -%}
         </div>
-<xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
+
+          <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+            {% assign nameLabelt = 'Type of Event' %}
+            <div class="xo-select-wrapper xo-contact__custom-field xo-contact__custom-field1">
+              <select name="contact[event_type]" required class="xo-input-custom xo-select-custom">
+                <option value="" disabled selected>{{ nameLabelt }}</option>
+
+                {% assign event_types = section.settings.event_types | split: ',' %}
+
+                {% for type in event_types %}
+                  <option value="{{ type | strip }}">{{ type | strip }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </xo-animate>
+
+          
+
+         
+          <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+            {% assign eventDateLabel1 = 'Estimated Guest Count *' %}
+            <div class="xo-contact__custom-field xo-select-wrapper xo-select-wrapper-c">
+              <select name="contact[guest_count]" required class="xo-input-custom xo-select-custom">
+                <option value="" disabled selected>{{ eventDateLabel1 }}</option>
+
+                {% assign guest_counts = section.settings.guest_counts | split: ',' %}
+
+                {% for count in guest_counts %}
+                  <option value="{{ count | strip }}">{{ count | strip }}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </xo-animate>
+        <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
   <div class="xo-contact__custom-field">
     <p class="xo-field-label">Which Favors Are You Interested In?</p>
 
@@ -106,9 +139,10 @@
       {% for option in favor_options %}
         <label class="xo-checkbox-item">
           <input
-            type="radio"
+            type="checkbox"
             name="contact[favors]"
             value="{{ option | strip }}"
+            class="favor-checkbox"
             {% if forloop.first %}checked{% endif %}
           >
           <span>{{ option | strip }}</span>
@@ -118,11 +152,40 @@
 
   </div>
 </xo-animate>
-<style>
-  .xo-checkbox-item input[type="radio"]{
-appearance:checkbox;
-}
-</style>
+          {% comment %} <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+            <div class="xo-contact__message">
+              <div class="xo-contact__message-input">
+                {% assign message_id = 'message--' | append: section.id %}
+                {% assign messageLabel = 'Delivery Address' %}
+                {% render 'field-textarea',
+                  name: 'contact[message]',
+                  value: form.body,
+                  label: messageLabel,
+                  required: true,
+                  id: message_id
+                %}
+              </div>
+            </div>
+          </xo-animate> {% endcomment %}
+         
+            
+         
+          {% render 'space', spacing_dt: '8', spacing_mb: '8' %}
+          <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+            <div class="xo-contact__message">
+              <div class="xo-contact__message-input">
+                {% assign message_id = 'message--' | append: section.id %}
+                {% assign messageLabel = 'Tell Us About Your Vision' %}
+                {% render 'field-textarea',
+                  name: 'contact[message]',
+                  value: form.body,
+                  label: messageLabel,
+                  required: true,
+                  id: message_id
+                %}
+              </div>
+            </div>
+          </xo-animate>
       </div>
       <div class="field">
         <input
