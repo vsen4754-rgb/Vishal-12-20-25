@@ -119,6 +119,24 @@
 
   </div>
 </xo-animate>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const checkboxes = document.querySelectorAll(".favor-checkbox");
+const defaultBox = document.querySelector('[data-default="true"]');
+
+checkboxes.forEach(box => {
+  box.addEventListener("change", function(){
+
+    if(!this.dataset.default){
+      defaultBox.checked = false;
+    }
+
+  });
+});
+
+});
+</script>
       </div>
       <div class="field">
         <input
