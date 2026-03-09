@@ -96,7 +96,81 @@
             </small>
           {%- endif -%}
         </div>
-<xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+ <input
+            type="hidden"
+            name="contact[wedding_event_favors]"
+            value="Wedding Event Favors"
+          >
+          {% comment %}
+            <!-- Container for error message -->
+            <div class='contact__form-error-message'>
+              <div class='xo-form-error'>
+                {% render 'icon', name: 'error' %}
+                <div class='xo-form-error__message'>Message is invalid.</div>
+              </div>
+            </div>
+          {% endcomment %}
+
+          <xo-grid class="xo-contact__input">
+            <xo-animate xo-cascade style="--lg: 6; --md: 12; --sm:12; --xs: 12">
+              <div class="xo-contact__first-name">
+                {% assign first_name_id = 'first-name--' | append: section.id %}
+                {% assign nameLabel = 'First *' %}
+                {% render 'field-input',
+                  type: 'text',
+                  name: 'contact[first_name]',
+                  value: form.first_name,
+                  label: nameLabel,
+                  id: first_name_id
+                %}
+              </div>
+            </xo-animate>
+            <xo-animate xo-cascade style="--lg: 6; --md: 12; --sm:12; --xs: 12">
+              <div class="xo-contact__last-name">
+                {% assign last_name_id = 'last-name--' | append: section.id %}
+                {% assign nameLabel = 'Last Name *' %}
+                {% render 'field-input',
+                  type: 'text',
+                  name: 'contact[last_name]',
+                  value: form.last_name,
+                  label: nameLabel,
+                  id: last_name_id
+                %}
+              </div>
+            </xo-animate>
+          </xo-grid>
+          <xo-grid class="xo-contact__input">
+            <!-- Email -->
+            <xo-animate xo-cascade style="--lg: 6; --md: 6; --sm:12; --xs:12">
+              <div class="xo-contact__email xo-contact__email1">
+                {% assign email_id = 'email--' | append: section.id %}
+                {% assign emailLabel = 'Email Address *' %}
+                {% render 'field-input',
+                  type: 'email',
+                  name: 'contact[email]',
+                  value: form.email,
+                  label: emailLabel,
+                  required: true,
+                  id: email_id
+                %}
+              </div>
+            </xo-animate>
+
+            <!-- Phone -->
+            <xo-animate xo-cascade style="--lg: 6; --md: 6; --sm:12; --xs:12">
+              <div class="xo-contact__custom-field">
+                <input
+                  type="tel"
+                  name="contact[phone]"
+                  placeholder="Phone Number *"
+                  required
+                  class="xo-input-custom xo-field-input"
+                >
+              </div>
+            </xo-animate>
+          </xo-grid>
+
+          {% comment %} <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
             <div class="xo-contact__subject">
               <div class="xo-contact__subject-input">
                 {% assign subject_id = 'subject--' | append: section.id %}
@@ -110,7 +184,22 @@
                 %}
               </div>
             </div>
-          </xo-animate>
+          </xo-animate> {% endcomment %}
+           <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
+              <div class="xo-contact__message xo-contact__message1">
+                <div class="xo-contact__message-input">
+                  {% assign message_id = 'message--' | append: section.id %}
+                  {% assign messageLabel = 'Delivery Address *' %}
+                  {% render 'field-input',
+                    name: 'contact[Delivery Address]',
+                    value: form.body,
+                    label: messageLabel,
+                    required: true,
+                    id: message_id
+                  %}
+                </div>
+              </div>
+            </xo-animate>
           {% render 'space', spacing_dt: '8', spacing_mb: '8' %}
           <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
             <div class="xo-contact__event-date">
@@ -181,23 +270,9 @@
               </div>
             </div>
           </xo-animate>
-          {% comment %}
-            <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
-              <div class="xo-contact__message">
-                <div class="xo-contact__message-input">
-                  {% assign message_id = 'message--' | append: section.id %}
-                  {% assign messageLabel = 'Delivery Address' %}
-                  {% render 'field-textarea',
-                    name: 'contact[message]',
-                    value: form.body,
-                    label: messageLabel,
-                    required: true,
-                    id: message_id
-                  %}
-                </div>
-              </div>
-            </xo-animate>
-          {% endcomment %}
+        
+           
+         
 
           {% render 'space', spacing_dt: '8', spacing_mb: '8' %}
           <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
@@ -215,21 +290,6 @@
               </div>
             </div>
           </xo-animate>
-          <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12">
-              <div class="xo-contact__message">
-                <div class="xo-contact__message-input">
-                  {% assign message_id = 'message--' | append: section.id %}
-                  {% assign messageLabel = 'Delivery Address *' %}
-                  {% render 'field-input',
-                    name: 'contact[Delivery Address]',
-                    value: form.body,
-                    label: messageLabel,
-                    required: true,
-                    id: message_id
-                  %}
-                </div>
-              </div>
-            </xo-animate>
       </div>
       <div class="field">
         <input
