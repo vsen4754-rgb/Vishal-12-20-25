@@ -124,7 +124,7 @@
           {{- 'templates.contact.form.comment' | t -}}
         </label>
       </div>
-     <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
+    <xo-animate xo-cascade style="--lg: 12; --md: 12; --sm:12; --xs: 12;">
   <div class="xo-contact__custom-field">
     <p class="xo-field-label">Which Favors Are You Interested In?</p>
 
@@ -132,17 +132,18 @@
 
     <div class="xo-checkbox-group">
       {% for option in favor_options %}
-        {% assign clean_option = option | strip %}
         <label class="xo-checkbox-item">
           <input
             type="checkbox"
-            name="contact[favors][]"
-            value="{{ clean_option }}"
+            name="contact[favors]"
+            value="{{ option | strip }}"
+            {% if forloop.first %}checked{% endif %}
           >
-          <span>{{ clean_option }}</span>
+          <span>{{ option | strip }}</span>
         </label>
       {% endfor %}
     </div>
+
   </div>
 </xo-animate>
       <div class="contact__button">
