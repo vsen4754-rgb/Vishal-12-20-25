@@ -29,7 +29,19 @@
     }
   }
 {%- endstyle -%}
-
+{% for p in line.properties %}
+		{% unless p.last == blank %} 
+			{% if p.first contains 'Delivery Date' %}
+			<p>Delivery Date : {{ p.last }} </p>
+			{% endif %}
+			{% if p.first contains 'Delivery Time' %}
+			<p>Delivery Time : {{ p.last }} </p>
+			{% endif %}
+			{% if p.first contains 'Additional Comments' %}
+			<p>Delivery Notes : {{ p.last }} </p>
+			{% endif %}
+		{% endunless %}
+		{% endfor %}
 <footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
   {%- liquid
     assign has_social_icons = true
