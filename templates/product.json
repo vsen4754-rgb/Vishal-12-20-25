@@ -37,6 +37,10 @@
           "type": "quantity_selector",
           "settings": {}
         },
+        "aj_delivery_date_product_integration_ehJQpT": {
+          "type": "shopify://apps/aj-delivery-date/blocks/product_integration/97657349-f9be-4991-ac2a-30ca8400a839",
+          "settings": {}
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -55,6 +59,7 @@
         "price",
         "variant_picker",
         "quantity_selector",
+        "aj_delivery_date_product_integration_ehJQpT",
         "buy_buttons",
         "complementary_product_HJ3kfV"
       ],
