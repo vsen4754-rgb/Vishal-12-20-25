@@ -157,6 +157,11 @@
           "video-title": "",
           "use-variant": "false"
         }
+      },
+      "5127822585025909231": {
+        "type": "shopify://apps/aj-delivery-date/blocks/oddm-calendar/97657349-f9be-4991-ac2a-30ca8400a839",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
